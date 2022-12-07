@@ -11,6 +11,12 @@ public class FluxAndMonoGeneratorService {
                 .log();
     }
 
+    public Flux<String> namesFluxMap() {
+        return Flux.fromIterable(List.of("alex", "ben", "chloe"))
+                .map(String::toUpperCase)
+                .log();
+    }
+
     public Mono<String> nameMono() {
         return Mono.just("alex")
                 .log();

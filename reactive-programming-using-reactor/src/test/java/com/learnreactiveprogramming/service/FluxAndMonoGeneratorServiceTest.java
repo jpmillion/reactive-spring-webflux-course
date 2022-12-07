@@ -22,4 +22,16 @@ class FluxAndMonoGeneratorServiceTest {
                 .verifyComplete();
 
     }
+
+    @Test
+    void namesFluxMap() {
+
+        //when
+        Flux<String> names = fluxAndMonoGeneratorService.namesFluxMap();
+
+        //then
+        StepVerifier.create(names)
+                .expectNext("ALEX", "BEN", "CHLOE")
+                .verifyComplete();
+    }
 }
